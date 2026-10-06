@@ -4,7 +4,7 @@ title: 3rdspace privacy policy
 
 # Privacy policy
 
-Effective 2026-09-30.
+Effective 2026-10-05.
 
 3rdspace is a presence-based social app. This policy explains what we collect, why, who can see it, and how to delete it. It applies to the 3rdspace app. The app is offered in Canada and is for people 18 or older only.
 
@@ -62,12 +62,13 @@ What remains after deletion:
 
 - Safety log records, until 12 months after each visit, as described above.
 - Reports you filed or that were filed about you, kept without your account identity attached.
+- Report alerts already prepared or queued for delivery may still contain account IDs if deletion races delivery. An email already delivered cannot be recalled.
 - Spaces, events and hotspots you created, which stay without a creator.
 - If you were blocked by someone, their blocked list may keep the name and username you had when they blocked you.
 
 ## Service providers
 
-We use Supabase to host our database, sign-in, file storage and backend functions, and Apple to deliver push notifications. They process data for us to provide the app. We don't share your data with anyone else, and we don't sell it. We may disclose information if the law requires it or to protect someone's safety.
+We use Supabase to host our database, sign-in, file storage and backend functions, and Apple to deliver push notifications. If report email alerts are enabled, we use Resend to email our safety inbox a report ID, reason, time, account IDs and, for a report about a space, event or hotspot, that item's ID. An alert already prepared or queued may still contain account IDs if deletion races delivery; an email already delivered cannot be recalled. These providers process data for us to provide the app. We don't share your data with anyone else, and we don't sell it. We may disclose information if the law requires it or to protect someone's safety.
 
 Your data is stored by Supabase in Canada (Montréal, AWS ca-central-1).
 

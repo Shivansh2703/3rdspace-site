@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join on 3rdspace</title>
+<style>
+:root{color-scheme:light dark;--bg:#fff;--fg:#111;--mute:#666;--btn:#111;--btnfg:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--fg:#eee;--mute:#999;--btn:#eee;--btnfg:#000}}
+body{margin:0;padding:48px 16px;background:var(--bg);color:var(--fg);font:17px/1.5 -apple-system,system-ui,sans-serif}
+main{max-width:420px;margin:0 auto}
+h1{font-size:24px;margin:0 0 24px}
+.btn{display:block;text-align:center;padding:14px;border-radius:12px;background:var(--btn);color:var(--btnfg);text-decoration:none;font-weight:600}
+p{color:var(--mute)}
+a{color:var(--fg)}
+.btn{color:var(--btnfg)}
+[hidden]{display:none}
+</style>
+</head>
+<body>
+<main>
+<h1>You're invited to a space</h1>
+<a id="open" class="btn" hidden>Open in 3rdspace</a>
+<p id="bad" hidden>This invite link isn't valid. Ask for a new one.</p>
+<p>Don't have the app yet? <a href="https://testflight.apple.com/join/7bbxA3zb">Get it on TestFlight</a></p>
+<p id="back" hidden>After you install it, come back here and tap the invite again.</p>
+<script>
+(function () {
+  var m = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.exec(
+    new URLSearchParams(location.search).get("s") || "");
+  if (!m) { document.getElementById("bad").hidden = false; return; }
+  var url = "thirdspace://join/" + m[0];
+  var a = document.getElementById("open");
+  a.setAttribute("href", url);
+  a.hidden = false;
+  document.getElementById("back").hidden = false;
+  window.location = url;
+})();
+</script>
+</main>
+</body>
+</html>
